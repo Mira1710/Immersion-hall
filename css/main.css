@@ -1,0 +1,98 @@
+body{
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: "IBM Plex Mono", monospace;
+    color: white;
+}
+.gradient-background {
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #4e0680, #935b93);
+    transition: background 0.2s ease;
+}
+#homepages{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+#first{
+position: relative;
+    width: 100%;
+}
+#header{
+    width: 100%;
+    height: 15vw;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 37vw;
+}
+.h2, .header_txt, .header_time, .bottom_txt{
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2vw;
+    text-transform: uppercase;
+}
+ .h2, .h1, .bottom_txt{
+     margin-left: 1.5vw;
+ }
+
+
+#middle{
+    display: flex;
+    width: 100%;
+    height: 20vw;
+}
+
+.h1{
+    font-size: 3vw;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+
+}
+
+
+#bottom{
+    width: 100%;
+    height: 15vw;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 85vw;
+}
+.logo{
+    width: 5vw;
+}
+
+#glass{
+    position: absolute;
+    margin-left: 70vw;
+}
+
+#second{
+    position: relative;
+    width: 100%;
+}
+#top2screen{
+    width: 100%;
+    height: 15vw;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 85vw;
+}
+#top_txt{
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2vw;
+    text-transform: uppercase;
+    margin-left: 1.5vw;
+}
+#help{
+    width: 3vw;
+    margin-top: 1vw;
+}
