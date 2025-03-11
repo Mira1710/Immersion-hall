@@ -5,6 +5,7 @@ body{
     font-family: "IBM Plex Mono", monospace;
     color: white;
 }
+
 .gradient-background {
     top: 0;
     left: 0;
@@ -16,7 +17,6 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     pointer-events: none;
     z-index: 1000;
 }
@@ -75,7 +75,6 @@ position: relative;
 }
 
 #second{
-    position: relative;
     width: 100%;
 }
 #top2screen{
@@ -83,9 +82,9 @@ position: relative;
     height: 10vw;
     display: inline-flex;
     align-items: flex-start;
-    gap: 85vw;
+    gap: 83vw;
 }
-#top_txt{
+.top_txt{
     font-style: normal;
     font-weight: 300;
     line-height: 2vw;
@@ -93,7 +92,7 @@ position: relative;
     margin-left: 1.5vw;
 }
 
-#help{
+.help{
     width: 3vw;
     margin-top: 1vw;
 }
@@ -141,6 +140,26 @@ position: relative;
     line-height: normal;
     text-transform: uppercase;
 
+}
+
+.selected {
+    border: 2px solid #FFF !important; /* Добавляем белую обводку */
+    background-color: #4800FF;
+    color: #FFF;
+}
+
+/* Стили для кнопки "СТАРТ" */
+#start-btn {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border: 2px solid #FFF;
+}
+
+#start-btn.active {
+    opacity: 1;
+    cursor: pointer;
+    border: 2px solid #4800FF;
+    background-color: #4800FF;
 }
 
 .first{
@@ -191,7 +210,7 @@ position: relative;
     margin-left: 35.5vw;
 }
 
-#start_game{
+.start_game{
     position: absolute;
     margin-left: -37vw;
     margin-top: 32vw;
@@ -211,4 +230,181 @@ position: relative;
     align-items: center;
     gap: 10px;
     flex-shrink: 0;
+}
+
+#third_screen{
+    width: 100%;
+    margin-bottom: 3vw;
+}
+#top3screen{
+    width: 100%;
+    height: 10vw;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 87.5vw;
+}
+#screen_game2{
+    position: relative;
+    display: flex;
+}
+
+.first_game_2 {
+    width: 60vw;
+    height: 51vw;
+    margin-top: -50vw;
+    margin-left: 23.5vw;
+}
+
+.title2{
+    position: absolute;
+    color: #4C0095;
+    font-size: 3.3vw;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-top: -45vw;
+    margin-left: 37vw;
+}
+
+.circles{
+    position: absolute;
+    width: 30vw;
+    height: auto;
+    margin-top: -40vw;
+    margin-left: 37vw;
+}
+
+.start_game2{
+    position: absolute;
+    margin-left: 46vw;
+    margin-top: -10vw;
+    border-radius: 50px;
+    border: 1px solid #4800FF;
+    background: #000;
+    color: #FFF;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    width: 180px;
+    height: 50px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+#four_screen{
+    margin-top: -3vw;
+}
+#top4screen{
+    margin-top: 0vw;
+    width: 100%;
+    height: 10vw;
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 87vw;
+}
+
+.stroke_screen3{
+    width: 2vw;
+    height: 50vw;
+    margin-top: -5vw;
+    margin-left: 1.5vw;
+}
+
+#screen_game3{
+    position: relative;
+    display: flex;
+}
+.first_game_3{
+    width: 60vw;
+    height: 51vw;
+    margin-top: -50vw;
+    margin-left: 23.5vw;
+}
+
+.title3{
+    position: absolute;
+    color: #4C0095;
+    font-size: 3.3vw;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-top: -46vw;
+    margin-left: 45vw;
+}
+
+.start_game3{
+    position: absolute;
+    margin-left: 37vw;
+    margin-top: -28vw;
+    border-radius: 50px;
+    border: 1px solid #4800FF;
+    background: #000;
+    color: #FFF;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    width: 450px;
+    height: 80px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    gap: 10px;
+    flex-shrink: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+
+#five_screen{
+    width: 100%;
+    height: 45vw;
+    background-color: #58006E;
+    display: flex;
+}
+
+.text{
+    width: 30vw;
+}
+.footter_txt, .footter1_txt, .footter2_txt, .footter3_txt{
+    color: #FFF;
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-left: 2vw;
+}
+.footter1_txt{
+    margin-top: 10vw;
+}
+.contacs, .contacs2{
+    font-size: 1.2vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-left: 2vw;
+}
+.footter2_txt{
+    margin-top: 12vw;
+}
+
+.hl_footer{
+    position: absolute;
+}
+.hl{
+    width: 65vw;
+    height: 40vw;
+    margin-left: 45vw;
+    margin-top: 5vw;
 }

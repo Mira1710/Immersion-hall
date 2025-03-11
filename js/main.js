@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let options = {
     "animate": true,
-    "patternWidth": 99.99,
-    "patternHeight": 71.87,
+    "patternWidth": 100,
+    "patternHeight": 100,
     "grainOpacity": 0.13,
     "grainDensity": 1,
     "grainWidth": 1,
@@ -53,7 +53,158 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener('mousemove', moveElement);
 
-    
+    let selectedDifficulty = null;
+    let selectedGenre = null;
+    const startButton = document.getElementById("start-btn");
+
+    document.querySelectorAll(".difficulty-btn").forEach(p => {
+        p.addEventListener("click", () => {
+            selectedDifficulty = p.dataset.difficulty;
+            highlightSelection(".difficulty-btn", p);
+            checkStartCondition();
+        });
+    });
+    function highlightSelection(selector, selectedElement) {
+        document.querySelectorAll(selector).forEach(el => el.classList.remove("selected"));
+        selectedElement.classList.add("selected");
+    }
+    function checkStartCondition() {
+        if (selectedDifficulty && selectedGenre) {
+            startButton.removeAttribute("disabled");
+            startButton.classList.add("active");
+        }
+    }
+    startButton.addEventListener("click", () => {
+        if (selectedDifficulty && selectedGenre) {
+            startGame(selectedDifficulty, selectedGenre);
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
