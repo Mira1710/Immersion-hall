@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "grainWidth": 1,
     "grainHeight": 1
 }
+
     grained("#homepages", options);
     window.addEventListener('resize', () => {
         grained("#homepages", options);
