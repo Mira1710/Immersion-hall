@@ -53,34 +53,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener('mousemove', moveElement);
 
-    let selectedDifficulty = null;
-    let selectedGenre = null;
-    const startButton = document.getElementById("start-btn");
 
-    document.querySelectorAll(".difficulty-btn").forEach(p => {
-        p.addEventListener("click", () => {
-            selectedDifficulty = p.dataset.difficulty;
-            highlightSelection(".difficulty-btn", p);
-            checkStartCondition();
-        });
-    });
-    function highlightSelection(selector, selectedElement) {
-        document.querySelectorAll(selector).forEach(el => el.classList.remove("selected"));
-        selectedElement.classList.add("selected");
+    const hlImage = document.querySelector('.hl');
+    const turbulence = document.querySelector('#water-effect feTurbulence');
+
+    if (!hlImage || !turbulence) {
+        console.error('Элементы не найдены!');
+        return;
     }
-    function checkStartCondition() {
-        if (selectedDifficulty && selectedGenre) {
-            startButton.removeAttribute("disabled");
-            startButton.classList.add("active");
-        }
-    }
-    startButton.addEventListener("click", () => {
-        if (selectedDifficulty && selectedGenre) {
-            startGame(selectedDifficulty, selectedGenre);
-        }
+
+    hlImage.addEventListener('mousemove', (e) => {
+        const rect = hlImage.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+
+        turbulence.setAttribute('baseFrequency', `${x * 0.05} ${y * 0.05}`);
     });
 
-
+    hlImage.addEventListener('mouseleave', () => {
+        turbulence.setAttribute('baseFrequency', '0.01 0.01');
+    });
 
 
 

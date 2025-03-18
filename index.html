@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMMERSION HALL</title>
     <link rel="stylesheet" href="./css/connect.css">
-    <script src="./js/grained.js"></script>
+
     <script src="js/main.js" charset="UTF-8"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +14,7 @@
     <link type="Image/x-icon" href="./img/favicon.ico" rel="icon">
 </head>
 <body>
+
 <section id="homepages">
     <div class="gradient-background">
     <div id="first">
@@ -35,9 +36,9 @@
             <img id="glass" src="./img/lense.png" alt="">
             <img class="logo" src="./img/logo.svg" alt=""></div>
           </div>
-    </div>
-<div id="second">
-    <div class="gradient-background">
+
+<div class="bg second">
+
     <div id="top2screen">
         <p class="top_txt">Мастер классы</p>
         <img class="help" src="./img/help.png" alt="">
@@ -49,7 +50,7 @@
             <div id="screen_game">
                 <img class="first_game" src="./img/firstgame.png" alt="">
                 <p class="title">Выбери мелодию</p>
-                <p class="subtitle first">Сложность</p>
+                <p class="subtitle one ">Сложность</p>
                <div id="difficulty">
                 <p class="subtitle two difficulty-btn" data-difficulty="easy">Лёгкий</p>
                 <p class="subtitle third difficulty-btn" data-difficulty="medium">Средний</p>
@@ -59,14 +60,13 @@
                 <p class="subtitle six genre-btn" data-genre="rock">Рок</p>
                 <p class="subtitle seven genre-btn" data-genre="classic">Классика</p>
                 <p class="subtitle eight genre-btn" data-genre="pop">Поп</p></div>
-                <button class="start_game" id="start-btn" disabled>Старт</button>
+                <button class="start_game" >Старт</button>
             </div>
 </div>
 
         </div>
 
-<div id="third_screen">
-    <div class="gradient-background">
+<div class="bg third_screen">
     <div id="top3screen">
         <p class="top_txt">Терапия</p>
         <img class="help" src="./img/help.png" alt="">
@@ -80,11 +80,10 @@
             <img class="circles" src="./img/circles.png" alt="">
             <button class="start_game2">Старт</button>
         </div>
-    </div>
 </div>
 
-<div id="four_screen">
-    <div class="gradient-background">
+<div class="bg four_screen">
+
         <div id="top4screen">
             <p class="top_txt">Концерты</p>
             <img class="help" src="./img/help.png" alt="">
@@ -100,7 +99,7 @@
     </div>
 </div>
 
-<div id="five_screen">
+<div class="bg five_screen">
     <div class="text">
     <p class="footter_txt">Immersion hall</p>
     <p class="footter1_txt">Контакты</p>
@@ -112,11 +111,18 @@
     <div class="hl_footer">
     <img class="hl" src="./img/hl.svg" alt=""></div>
 
+    </div>
+        <svg width="0" height="0" style="position:absolute;">
+            <filter id="water-effect">
+                <feTurbulence type="turbulence" baseFrequency="0.01 0.01" numOctaves="2" result="turbulence" />
+                <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="20" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+        </svg>
+
+
+    </div>
 </div>
-
-
-
-</div>
-</section>
+ </section>
+<script src="./js/grained.js"></script>
 </body>
 </html>
