@@ -48,22 +48,28 @@
     <img class="stroke_screen" src="./img/stroke1.svg" alt="">
 </div>
             <div id="screen_game">
-                <img class="first_game" src="./img/firstgame.png" alt="">
+                <img class="first_game" src="./img/firstgame.png" alt="Game">
                 <p class="title">Выбери мелодию</p>
                 <p class="subtitle one ">Сложность</p>
                <div id="difficulty">
-                <p class="subtitle two difficulty-btn" data-difficulty="easy">Лёгкий</p>
-                <p class="subtitle third difficulty-btn" data-difficulty="medium">Средний</p>
-                <p class="subtitle four difficulty-btn" data-difficulty="hard">Тяжёлый</p>
+                   <button class="difficulty-btn" data-difficulty="easy">Лёгкий</button>
+                   <button class="difficulty-btn" data-difficulty="medium">Средний</button>
+                   <button class="difficulty-btn" data-difficulty="hard">Тяжёлый</button>
+               </div>
                 <p class="subtitle five">Жанр</p>
                 <div id="genre">
-                <p class="subtitle six genre-btn" data-genre="rock">Рок</p>
-                <p class="subtitle seven genre-btn" data-genre="classic">Классика</p>
-                <p class="subtitle eight genre-btn" data-genre="pop">Поп</p></div>
+                    <button class="genre-btn" data-genre="rock">Рок</button>
+                    <button class="genre-btn" data-genre="classic">Классика</button>
+                    <button class="genre-btn" data-genre="pop">Поп</button>
+                </div>
                 <button class="start_game" >Старт</button>
             </div>
-</div>
 
+            <div id="game-screen" class="hidden">
+                <div id="notes-container"></div>
+                <div id="score">Поймано нот: 0</div>
+            </div>
+   </div>
         </div>
 
 <div class="bg third_screen">

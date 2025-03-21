@@ -146,56 +146,23 @@ position: relative;
 
 .one{
     position: absolute;
-    margin-top: -33vw;
-    margin-left: 15vw;
+    margin-top: -35.5vw;
+    margin-left: 16vw;
 }
 
 .five{
     position: absolute;
-    margin-top: -33vw;
-    margin-left: 35vw;
+    margin-top: -35.5vw;
+    margin-left: 34vw;
 }
 
-.two{
-    position: absolute;
-    margin-top: -28vw;
-    margin-left: 16.5vw;
-}
 
-.third{
-    position: absolute;
-    margin-top: -24vw;
-    margin-left: 16vw;
-}
 
-.four{
-    position: absolute;
-    margin-top: -20vw;
-    margin-left: 16vw;
-}
-
-.six{
-    position: absolute;
-    margin-top: -28vw;
-    margin-left: 35.5vw;
-}
-
-.seven{
-    position: absolute;
-    margin-top: -20vw;
-    margin-left: 33vw;
-}
-
-.eight{
-    position: absolute;
-    margin-top: -24vw;
-    margin-left: 35.5vw;
-}
 
 .start_game{
     position: absolute;
-    margin-left: 22vw;
-    margin-top:-11vw;
+    margin-left: 22.5vw;
+    margin-top:-18vw;
     border-radius: 50px;
     border: 1px solid #4800FF;
     background: #000;
@@ -206,13 +173,98 @@ position: relative;
     line-height: normal;
     text-transform: uppercase;
     width: 180px;
-    height: 50px;
+    height: 60px;
     padding: 10px;
     justify-content: center;
     align-items: center;
     gap: 10px;
     flex-shrink: 0;
 }
+
+.hidden {
+    display: none;
+    background-image: url("img/firstgame.png");
+}
+
+button{
+    position: absolute;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 2vw;
+    border: 1px solid #000000;
+    background: #000;
+    color: #FFF;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+button[data-genre="rock"]{
+    margin-top: -31.5vw;
+    margin-left: 34vw;
+}
+button[data-genre="classic"]{
+    margin-top: -28vw;
+    margin-left: 31.5vw;
+}
+button[data-genre="pop"]{
+    margin-top: -24.5vw;
+    margin-left: 34vw;
+}
+
+button[data-difficulty="easy"]{
+    margin-top: -31.5vw;
+    margin-left: 17.2vw;
+}
+button[data-difficulty="medium"]{
+    margin-top: -28vw;
+    margin-left: 16.5vw;
+}
+button[data-difficulty="hard"]{
+    margin-top: -24.5vw;
+    margin-left: 16.2vw;
+}
+.difficulty-btn.active {
+    border: 2px solid #0711a2;
+    border-radius: 50px;
+    background-color: #000000;
+}
+
+.genre-btn.active{
+    border: 2px solid #0711a2;
+    background-color: #000000;
+    border-radius: 50px;
+}
+#notes-container {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    background-image: url('/img/firstgame.png'); /* Ваш фон */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.note {
+    position: absolute;
+    width: 40px; /* Размер SVG */
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+#score{
+    margin-top: -20vw;
+    margin-left: -13vw;
+}
+
+
+
+
+
+
+
+
 
 .third_screen{
     width: 100%;
@@ -343,6 +395,18 @@ position: relative;
     gap: 10px;
     flex-shrink: 0;
     transition: background 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+#imageContainer {
+    position: relative;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#interactiveImage {
+    max-width: 100%;
+    height: auto;
     cursor: pointer;
 }
 
