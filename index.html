@@ -41,7 +41,7 @@
 
     <div id="top2screen">
         <p class="top_txt">Мастер классы</p>
-        <img class="help" src="./img/help.png" alt="">
+        <img class="help" src="./img/help.png" alt="" data-tooltip="Подсказка для первой картинки">
     </div>
         <div id="middle_part">
 <div id="stroke">
@@ -59,7 +59,7 @@
                 <p class="subtitle five">Жанр</p>
                 <div id="genre">
                     <button class="genre-btn" data-genre="rock">Рок</button>
-                    <button class="genre-btn" data-genre="classic">Классика</button>
+                    <button class="genre-btn" data-genre="ethno">Этно</button>
                     <button class="genre-btn" data-genre="pop">Поп</button>
                 </div>
                 <button class="start_game" >Старт</button>
@@ -83,7 +83,9 @@
         <div id="screen_game2">
             <img class="first_game_2" src="./img/firstgame.png" alt="">
             <p class="title2">Резонанс тишины</p>
-            <img class="circles" src="./img/circles.png" alt="">
+            <div class="image-container">
+                <img id="dynamicImage" src="./img/circles.png" alt="Initial Image">
+            </div>
             <button class="start_game2">Старт</button>
         </div>
 </div>
@@ -92,7 +94,7 @@
 
         <div id="top4screen">
             <p class="top_txt">Концерты</p>
-            <img class="help" src="./img/help.png" alt="">
+                <img class="help" src="./img/help.png" alt="Помощь">
         </div>
         <div id="stroke3">
             <img class="stroke_screen3" src="./img/stroke1.svg" alt="">
@@ -101,6 +103,11 @@
             <img class="first_game_3" src="./img/firstgame.png" alt="">
             <p class="title3">Эхо зала</p>
             <button class="start_game3">Начать исследование</button>
+            <div class="hall" id="hall">
+                <div class="stage">Сцена</div>
+                <div class="tooltip" id="tooltip"></div>
+            </div>
+            </div>
         </div>
     </div>
 </div>
@@ -124,7 +131,6 @@
                 <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="20" xChannelSelector="R" yChannelSelector="G" />
             </filter>
         </svg>
-
 
     </div>
 </div>
