@@ -38,29 +38,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // Создаю эффект для курсора
-    const glass = document.getElementById('glass');
+    // // Создаю эффект для курсора
+    // const glass = document.getElementById('glass');
+    //
+    // function moveElement(event) {
+    //     const offsetX = 1;
+    //     const offsetY = 1;
+    //
+    //
+    //     const vwToPx = (vw) => (window.innerWidth * vw) / 100;
+    //
+    //     const x = event.clientX + vwToPx(offsetX);
+    //     const y = event.clientY + vwToPx(offsetY);
+    //     const maxX = window.innerWidth - glass.offsetWidth;
+    //     const maxY = window.innerHeight - glass.offsetHeight;
+    //
+    //     glass.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
+    //     glass.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
+    // }
+    //
+    // document.addEventListener('mousemove', moveElement);
 
-    function moveElement(event) {
-        const offsetX = 1;
-        const offsetY = 1;
-
-
-        const vwToPx = (vw) => (window.innerWidth * vw) / 100;
-
-        const x = event.clientX + vwToPx(offsetX);
-        const y = event.clientY + vwToPx(offsetY);
-
-        // Проверка границ, чтобы стекло не выходило за пределы экрана
-        const maxX = window.innerWidth - glass.offsetWidth;
-        const maxY = window.innerHeight - glass.offsetHeight;
-
-        glass.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
-        glass.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
-    }
-
-    document.addEventListener('mousemove', moveElement);
-        // выбор сложности
+    // выбор сложности
         const difficultyButtons = document.querySelectorAll('.difficulty-btn');
         difficultyButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -68,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 button.classList.add('active');
             });
         });
-
 
         // выбор жанра
 const genreButtons = document.querySelectorAll('.genre-btn');
@@ -124,7 +122,6 @@ genreButtons.forEach(button => {
             moveNote(note, noteSpeed);
         }, notesInterval);
 
-        // Остановка игры через 30 секунд
         setTimeout(() => {
             clearInterval(noteGenerator);
             alert(`Игра окончена! Поймано нот: ${caughtNotes}`);
@@ -200,13 +197,10 @@ genreButtons.forEach(button => {
     document.querySelector('.start_game2').addEventListener('click', function() {
         const imageContainer = document.querySelector('.image-container');
         const button = document.querySelector('.start_game2');
-        let timeLeft = 120; // 2 минуты в секундах
-
-        // Удаляем исходное изображение
+        let timeLeft = 120;
         const dynamicImage = document.getElementById('dynamicImage');
         dynamicImage.remove();
 
-        // Создаем новый элемент SVG-круга
         const svgNS = "http://www.w3.org/2000/svg";
         const svgElement = document.createElementNS(svgNS, "svg");
         svgElement.setAttribute("width", "150");
@@ -236,7 +230,7 @@ genreButtons.forEach(button => {
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
                 svgElement.remove();
-                imageContainer.innerHTML = '<img id="dynamicImage" src="./img/initial-image.svg" alt="Initial Image">'; // Возвращаем исходное изображение
+                imageContainer.innerHTML = '<img id="dynamicImage" src="./img/circles.png" alt="Initial Image">';
                 button.textContent = 'Старт';
                 button.disabled = false;
                 button.style.cursor = 'pointer';
@@ -322,74 +316,94 @@ genreButtons.forEach(button => {
         }
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // анимированный футер
+// Получаем все элементы с классом "help"
+    const helpImages = document.querySelectorAll('.help');
+
+// Добавляем обработчик события для каждой картинки
+    helpImages.forEach(image => {
+        image.addEventListener('click', function() {
+            // Создаём элемент подсказки
+            const helpTooltip = document.createElement('div');
+            helpTooltip.classList.add('help-tooltip');
+            helpTooltip.textContent = image.getAttribute('data-tooltip'); // Текст подсказки из атрибута
+
+            // Добавляем подсказку в DOM
+            document.body.appendChild(helpTooltip);
+
+            // Получаем размеры иконки
+            const rect = image.getBoundingClientRect();
+
+            helpTooltip.style.position = 'absolute';
+
+// Вычисляем желаемую позицию слева от иконки с учётом прокрутки
+            let tooltipLeft = rect.left + window.scrollX - helpTooltip.offsetWidth - 10;
+            let tooltipTop = rect.top + window.scrollY + (rect.height / 2) - (helpTooltip.offsetHeight / 2);
+
+// Если подсказка выходит за пределы левого края экрана, размещаем её справа
+            if (tooltipLeft < 0) {
+                tooltipLeft = rect.right + window.scrollX + 10;
+            }
+
+// Устанавливаем финальные координаты
+            helpTooltip.style.left = `${tooltipLeft}px`;
+            helpTooltip.style.top = `${Math.max(tooltipTop, 10)}px`; // Ограничиваем, чтобы не выходила за верхний край
+
+
+            // Закрытие подсказки через 10 секунд
+            setTimeout(() => {
+                helpTooltip.remove();
+            }, 10000);
+        });
+    });
+
+    // анимация с видео у первого экрана
+        const textElements = document.querySelectorAll("#first p, #first h1, #first h2"); // Все текстовые элементы
+        const videoArray = [
+            "./videos/video1.mp4",
+            "./videos/video2.mp4",
+            "./videos/video3.mp4",
+            "./videos/video4.mp4"
+        ];
+
+        const hoverVideo = document.createElement("video");
+        hoverVideo.style.position = "absolute";
+        hoverVideo.style.display = "none";
+        hoverVideo.style.width = "20vw";
+        hoverVideo.style.height = "20vw";
+        hoverVideo.style.margin = "1.6vw";
+        hoverVideo.style.borderRadius = "30vw";
+        hoverVideo.style.zIndex = "1000";
+        hoverVideo.style.pointerEvents = "none";
+        hoverVideo.muted = true;
+        hoverVideo.loop = true;
+        document.body.appendChild(hoverVideo);
+
+        textElements.forEach((element) => {
+            element.addEventListener("mouseenter", (event) => {
+                const randomVideo = videoArray[Math.floor(Math.random() * videoArray.length)]; // Выбираем случайное видео
+                hoverVideo.src = randomVideo;
+                hoverVideo.style.display = "block";
+                hoverVideo.play();
+
+
+                hoverVideo.style.left = `${event.pageX + 20}px`;
+                hoverVideo.style.top = `${event.pageY}px`;
+            });
+
+            element.addEventListener("mousemove", (event) => {
+                hoverVideo.style.left = `${event.pageX + 20}px`;
+                hoverVideo.style.top = `${event.pageY}px`;
+            });
+
+            element.addEventListener("mouseleave", () => {
+                hoverVideo.style.display = "none";
+                hoverVideo.pause();
+            });
+        });
+
+
+
+        // анимированный футер
     const hlImage = document.querySelector('.hl');
     const turbulence = document.querySelector('#water-effect feTurbulence');
 

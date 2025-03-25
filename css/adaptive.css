@@ -1,0 +1,65 @@
+@media (min-width: 768px) and (max-width: 991px) {
+    .h2, .header_txt, .header_time, .bottom_txt{
+        font-size: 2vw;
+        line-height: 2.5vw;
+        white-space: nowrap;
+    }
+    .top_txt{
+        font-size: 2vw;
+        white-space: nowrap;
+    }
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 768px) {
+
+    .h2, .header_txt, .header_time, .bottom_txt{
+        font-size: 2vw;
+        line-height: 2.5vw;
+        white-space: nowrap;
+    }
+.top_txt{
+    font-size: 2vw;
+    white-space: nowrap;
+}
+
+    button[data-genre="rock"]{
+        margin-top: -31.5vw;
+        margin-left: 33vw;
+        cursor: pointer;
+    }
+    button[data-genre="ethno"]{
+        margin-top: -28vw;
+        margin-left: 32.6vw;
+        cursor: pointer;
+    }
+    button[data-genre="pop"]{
+        margin-top: -24.5vw;
+        margin-left: 33vw;
+        cursor: pointer;
+    }
+
+    button[data-difficulty="easy"]{
+        margin-top: -31.5vw;
+        margin-left: 16vw;
+        cursor: pointer;
+    }
+    button[data-difficulty="medium"]{
+        margin-top: -28vw;
+        margin-left: 15.5vw;
+        cursor: pointer;
+    }
+    button[data-difficulty="hard"]{
+        margin-top: -24.5vw;
+        margin-left: 15vw;
+        cursor: pointer;}
+
+
+}
