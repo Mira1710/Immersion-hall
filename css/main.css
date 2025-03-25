@@ -9,7 +9,7 @@ body{
 .gradient-background {
     top: 0;
     left: 0;
-    background: linear-gradient(45deg, #4e0680, #935b93);
+    background: linear-gradient(45deg, #935b93, #4e0680);
     transition: background 0.2s ease;
 }
 
@@ -99,6 +99,7 @@ position: relative;
     width: 3vw;
     margin-top: 1vw;
     cursor: pointer;
+    z-index: 100;
 
 }
 
@@ -106,13 +107,16 @@ position: relative;
     transform: scale(1.1);
 }
 .help-tooltip {
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 30vw;
+    height: 5vw;
+    margin-top: 3vw;
+    background-color: rgb(78, 6, 128);
     color: white;
-    padding: 5px 10px;
+    white-space: pre-line;
+    padding: 1vw;
     border-radius: 5px;
     font-size: 14px;
-    white-space: nowrap;
     z-index: 1000;
     cursor: pointer;
     opacity: 0;
@@ -165,7 +169,7 @@ position: relative;
     line-height: normal;
     text-transform: uppercase;
     margin-top: -42vw;
-    margin-left: 16vw;
+    margin-left: 15.5vw;
 }
 
 .subtitle{
@@ -182,7 +186,7 @@ position: relative;
 .one{
     position: absolute;
     margin-top: -35vw;
-    margin-left: 17vw;
+    margin-left: 16.5vw;
 }
 
 .five{
@@ -196,7 +200,7 @@ position: relative;
 
 .start_game{
     position: absolute;
-    margin-left: 23vw;
+    margin-left: 22.5vw;
     margin-top:-15vw;
     border-radius: 50px;
     border: 1px solid #4C0095;
@@ -235,7 +239,9 @@ button{
     text-transform: uppercase;
     cursor: pointer;
 }
-
+#difficulty {
+    display: flex; /* Включаем Flexbox */
+}
 button[data-genre="rock"]{
     margin-top: -31.5vw;
     margin-left: 34.3vw;
@@ -254,17 +260,17 @@ button[data-genre="pop"]{
 
 button[data-difficulty="easy"]{
     margin-top: -31.5vw;
-    margin-left: 18.2vw;
+    margin-left: 17.5vw;
     cursor: pointer;
 }
 button[data-difficulty="medium"]{
     margin-top: -28vw;
-    margin-left: 17.5vw;
+    margin-left: 16.5vw;
     cursor: pointer;
 }
 button[data-difficulty="hard"]{
     margin-top: -24.5vw;
-    margin-left: 17.2vw;
+    margin-left: 16.3vw;
     cursor: pointer;
 }
 .difficulty-btn.active {
