@@ -414,4 +414,5 @@ genreButtons.forEach(button => {
     //
     // document.addEventListener('mousemove', moveElement);
 
+    
 })
