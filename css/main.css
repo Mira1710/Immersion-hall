@@ -109,9 +109,9 @@ position: relative;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
+    padding: 0.5vw 0.7vw;
+    border-radius: 0.5vw;
+    font-size: 1vw;
     white-space: nowrap;
     z-index: 1000;
     cursor: pointer;
@@ -207,9 +207,9 @@ position: relative;
     font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
-    width: 180px;
-    height: 60px;
-    padding: 10px;
+    width: 12.25vw;
+    height: 5.5vw;
+    padding: 0.7vw;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -226,7 +226,7 @@ button{
     position: absolute;
     font-family: "IBM Plex Sans", sans-serif;
     font-size: 2vw;
-    border: 1px solid #000000;
+    border: 0.1vw solid #000000;
     background: #000;
     color: #FFF;
     font-style: normal;
@@ -268,32 +268,32 @@ button[data-difficulty="hard"]{
     cursor: pointer;
 }
 .difficulty-btn.active {
-    border: 1px solid #4C0095;
-    border-radius: 50px;
+    border: 0.1vw solid #4C0095;
+    border-radius: 10vw;
     background-color: #000000;
     cursor: pointer;
 }
 
 .genre-btn.active{
-    border: 1px solid #4C0095;
+    border: 0.1vw solid #4C0095;
     background-color: #000000;
-    border-radius: 50px;
+    border-radius: 10vw;
 }
 #notes-container {
     position: relative;
-    width: 400px;
-    height: 300px;
+    width: 28.8vw;
+    height: 21vw;
     background-image: url('/img/firstgame.png');
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
+    border-radius: 0.7vw;
     overflow: hidden;
 }
 
 .note {
     position: absolute;
-    width: 40px;
-    height: 40px;
+    width: 3vw;
+    height: 3vw;
     cursor: pointer;
     z-index: 10;
 }
@@ -381,12 +381,12 @@ height: 20vw;
     font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
-    width: 180px;
-    height: 60px;
-    padding: 10px;
+    width: 12.25vw;
+    height: 5vw;
+    padding: 0.7vw;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 0.7vw;
     flex-shrink: 0;
     cursor: pointer;
 }
@@ -446,13 +446,13 @@ height: 20vw;
     font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
-    width: 450px;
-    height: 80px;
-    padding: 10px;
+    width: 31.25vw;
+    height: 5.5vw;
+    padding: 0.7vw;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    gap: 10px;
+    gap: 0.7vw;
     flex-shrink: 0;
     transition: background 0.3s ease, color 0.3s ease;
     cursor: pointer;
@@ -465,7 +465,7 @@ height: 20vw;
 #hall {
     width: 50vw;
     height: 30vw;
-    border: 1px solid #4C0095;
+    border: 0.1vw solid #4C0095;
     position: absolute;
     margin-top: -40vw;
     margin-left: 27.5vw;
@@ -477,7 +477,7 @@ height: 20vw;
     width: 5vw;
     height: 5vw;
     background-color: #000000;
-    border: 1px solid #4C0095;
+    border: 0.1vw solid #4C0095;
     color: white;
     position: absolute;
     top: 50%;
@@ -494,17 +494,17 @@ height: 20vw;
 }
 
 .seat {
-    width: 40px;
-    height: 40px;
+    width: 3vw;
+    height: 3vw;
     background-color: #000000;
-    border: 1px solid #4C0095;
+    border: 0.1vw solid #4C0095;
     border-radius: 50%;
     position: absolute;
     cursor: pointer;
 }
 .seat.active {
     background: #4C0095;
-    box-shadow: 0 0 15px rgba(76, 0, 149, 0.7);
+    box-shadow: 0 0 1vw rgba(76, 0, 149, 0.7);
     transform: scale(1.1);
 }
 
