@@ -485,6 +485,7 @@ height: 20vw;
     font-family: "IBM Plex Mono", monospace;
     font-style: normal;
     font-weight: 300;
+    font-size: 2vw;
     line-height: normal;
     text-transform: uppercase;
     transform: translate(-50%, -50%);

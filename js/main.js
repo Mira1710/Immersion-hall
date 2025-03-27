@@ -38,27 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    // // Создаю эффект для курсора
-    // const glass = document.getElementById('glass');
-    //
-    // function moveElement(event) {
-    //     const offsetX = 1;
-    //     const offsetY = 1;
-    //
-    //
-    //     const vwToPx = (vw) => (window.innerWidth * vw) / 100;
-    //
-    //     const x = event.clientX + vwToPx(offsetX);
-    //     const y = event.clientY + vwToPx(offsetY);
-    //     const maxX = window.innerWidth - glass.offsetWidth;
-    //     const maxY = window.innerHeight - glass.offsetHeight;
-    //
-    //     glass.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
-    //     glass.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
-    // }
-    //
-    // document.addEventListener('mousemove', moveElement);
-
     // выбор сложности
         const difficultyButtons = document.querySelectorAll('.difficulty-btn');
         difficultyButtons.forEach(button => {
@@ -133,7 +112,7 @@ genreButtons.forEach(button => {
     function createNote() {
         const note = document.createElement('img');
         note.classList.add('note');
-        note.src = 'img/note.svg'; // Ваш SVG-файл ноты
+        note.src = 'img/note.svg'; 
         note.style.left = `${Math.random() * 90}%`;
         note.style.top = `-40px`;
         notesContainer.appendChild(note);
@@ -316,40 +295,28 @@ genreButtons.forEach(button => {
         }
     });
 
-// Получаем все элементы с классом "help"
+// Подсказки
     const helpImages = document.querySelectorAll('.help');
 
-// Добавляем обработчик события для каждой картинки
     helpImages.forEach(image => {
         image.addEventListener('click', function() {
-            // Создаём элемент подсказки
             const helpTooltip = document.createElement('div');
             helpTooltip.classList.add('help-tooltip');
-            helpTooltip.textContent = image.getAttribute('data-tooltip'); // Текст подсказки из атрибута
+            helpTooltip.textContent = image.getAttribute('data-tooltip');
 
-            // Добавляем подсказку в DOM
             document.body.appendChild(helpTooltip);
 
-            // Получаем размеры иконки
             const rect = image.getBoundingClientRect();
 
             helpTooltip.style.position = 'absolute';
-
-// Вычисляем желаемую позицию слева от иконки с учётом прокрутки
             let tooltipLeft = rect.left + window.scrollX - helpTooltip.offsetWidth - 10;
             let tooltipTop = rect.top + window.scrollY + (rect.height / 2) - (helpTooltip.offsetHeight / 2);
-
-// Если подсказка выходит за пределы левого края экрана, размещаем её справа
             if (tooltipLeft < 0) {
                 tooltipLeft = rect.right + window.scrollX + 10;
             }
 
-// Устанавливаем финальные координаты
             helpTooltip.style.left = `${tooltipLeft}px`;
-            helpTooltip.style.top = `${Math.max(tooltipTop, 10)}px`; // Ограничиваем, чтобы не выходила за верхний край
-
-
-            // Закрытие подсказки через 10 секунд
+            helpTooltip.style.top = `${Math.max(tooltipTop, 10)}px`; 
             setTimeout(() => {
                 helpTooltip.remove();
             }, 10000);
@@ -357,7 +324,7 @@ genreButtons.forEach(button => {
     });
 
     // анимация с видео у первого экрана
-        const textElements = document.querySelectorAll("#first p, #first h1, #first h2"); // Все текстовые элементы
+        const textElements = document.querySelectorAll("#first p, #first h1, #first h2"); 
         const videoArray = [
             "./videos/video1.mp4",
             "./videos/video2.mp4",
@@ -380,7 +347,7 @@ genreButtons.forEach(button => {
 
         textElements.forEach((element) => {
             element.addEventListener("mouseenter", (event) => {
-                const randomVideo = videoArray[Math.floor(Math.random() * videoArray.length)]; // Выбираем случайное видео
+                const randomVideo = videoArray[Math.floor(Math.random() * videoArray.length)]; 
                 hoverVideo.src = randomVideo;
                 hoverVideo.style.display = "block";
                 hoverVideo.play();
@@ -426,127 +393,25 @@ genreButtons.forEach(button => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ // // Создаю эффект для курсора
+    // const glass = document.getElementById('glass');
+    //
+    // function moveElement(event) {
+    //     const offsetX = 1;
+    //     const offsetY = 1;
+    //
+    //
+    //     const vwToPx = (vw) => (window.innerWidth * vw) / 100;
+    //
+    //     const x = event.clientX + vwToPx(offsetX);
+    //     const y = event.clientY + vwToPx(offsetY);
+    //     const maxX = window.innerWidth - glass.offsetWidth;
+    //     const maxY = window.innerHeight - glass.offsetHeight;
+    //
+    //     glass.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
+    //     glass.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
+    // }
+    //
+    // document.addEventListener('mousemove', moveElement);
 
 })
