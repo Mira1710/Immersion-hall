@@ -345,28 +345,56 @@ genreButtons.forEach(button => {
         hoverVideo.loop = true;
         document.body.appendChild(hoverVideo);
 
-        textElements.forEach((element) => {
-            element.addEventListener("mouseenter", (event) => {
-                const randomVideo = videoArray[Math.floor(Math.random() * videoArray.length)]; 
-                hoverVideo.src = randomVideo;
-                hoverVideo.style.display = "block";
-                hoverVideo.play();
+    const container = document.getElementById("first")
+    const containerRect = container.getBoundingClientRect();
 
+    function positionVideo(event) {
+    
+        let x = event.pageX + 20;
+        let y = event.pageY;
 
-                hoverVideo.style.left = `${event.pageX + 20}px`;
-                hoverVideo.style.top = `${event.pageY}px`;
-            });
+ 
+        const videoWidth = hoverVideo.offsetWidth;
+        const videoHeight = hoverVideo.offsetHeight;
 
-            element.addEventListener("mousemove", (event) => {
-                hoverVideo.style.left = `${event.pageX + 20}px`;
-                hoverVideo.style.top = `${event.pageY}px`;
-            });
+   
+        if (x + videoWidth > containerRect.right) {
+            x = containerRect.right - videoWidth;
+        }
+        if (y + videoHeight > containerRect.bottom) {
+            y = containerRect.bottom - videoHeight;
+        }
 
-            element.addEventListener("mouseleave", () => {
-                hoverVideo.style.display = "none";
-                hoverVideo.pause();
-            });
+        if (x < containerRect.left) {
+            x = containerRect.left;
+        }
+        if (y < containerRect.top) {
+            y = containerRect.top;
+        }
+
+        hoverVideo.style.left = `${x}px`;
+        hoverVideo.style.top = `${y}px`;
+    }
+
+    textElements.forEach((element) => {
+        element.addEventListener("mouseenter", (event) => {
+            const randomVideo = videoArray[Math.floor(Math.random() * videoArray.length)];
+            hoverVideo.src = randomVideo;
+            hoverVideo.style.display = "block";
+            hoverVideo.play();
+
+            positionVideo(event);
         });
+
+        element.addEventListener("mousemove", (event) => {
+            positionVideo(event);
+        });
+
+        element.addEventListener("mouseleave", () => {
+            hoverVideo.style.display = "none";
+            hoverVideo.pause();
+        });
+    });
 
 
 
