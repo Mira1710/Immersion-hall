@@ -107,12 +107,14 @@ position: relative;
 }
 .help-tooltip {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.7);
+    width: 20vw;
+    margin-top: 3vw;
+    background-color: rgb(78, 6, 128);
     color: white;
     padding: 0.5vw 0.7vw;
     border-radius: 0.5vw;
     font-size: 1vw;
-    white-space: nowrap;
+    white-space: pre-line;
     z-index: 1000;
     cursor: pointer;
     opacity: 0;
